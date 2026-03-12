@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rethicedev — Full-Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#hero"         onclick="closeMobile()" data-i18n="mob_home">Accueil</a>
+    <a href="#about"        onclick="closeMobile()" data-i18n="mob_about">À Propos</a>
+    <a href="#skills"       onclick="closeMobile()" data-i18n="mob_skills">Compétences</a>
+    <a href="#services"     onclick="closeMobile()" data-i18n="mob_services">Services</a>
+    <a href="#projects"     onclick="closeMobile()" data-i18n="mob_projects">Projets</a>
+    <a href="#contact"      onclick="closeMobile()" data-i18n="mob_contact">Contact</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">rethicedev<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about"      data-num="01" data-i18n="nav_about">À Propos</a></li>
+      <li><a href="#skills"     data-num="02" data-i18n="nav_skills">Skills</a></li>
+      <li><a href="#services"   data-num="03" data-i18n="nav_services">Services</a></li>
+      <li><a href="#projects"   data-num="04" data-i18n="nav_projects">Projets</a></li>
+      <li><a href="#contact"    data-num="05" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div class="nav-controls">
+      <button class="lang-btn"  id="langBtn"  onclick="toggleLang()">EN</button>
+      <button class="theme-btn" id="themeBtn" onclick="toggleTheme()">☀</button>
+      <button class="hamburger" id="hamBtn"   onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero">
+    <div class="hero-bg-orb orb1"></div>
+    <div class="hero-bg-orb orb2"></div>
+    <div class="hero-content">
+      <div class="hero-tag" data-i18n="hero_badge">Disponible pour des missions freelance</div>
+      <h1 class="hero-name">
+        <span data-i18n="hero_name1">Rogélio</span><br>
+        <span class="highlight" data-i18n="hero_name2">Rethicedev</span>
+      </h1>
+      <p class="hero-role">&gt; <span id="typed-text"></span></p>
+      <p class="hero-desc" data-i18n="hero_desc">
+        Informaticien programmeur passionné par la création d'applications web &amp; mobiles modernes. Je transforme vos idées en solutions digitales robustes et élégantes.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact"              class="btn-primary" data-i18n="hero_btn1"><i class="fa fa-paper-plane"></i> Me Contacter</a>
+        <a href="files/cv-rethicedev.pdf" class="btn-outline" target="_blank" data-i18n="hero_btn2"><i class="fa fa-download"></i> Voir mon CV</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span data-i18n="hero_scroll">DÉFILER</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== STATS ===== -->
+  <section id="stats">
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-num counter" data-target="22">0</div>
+        <div class="stat-label" data-i18n="stat1_label">Projets terminés</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num counter" data-target="16">0</div>
+        <div class="stat-label" data-i18n="stat2_label">Clients satisfaits</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num counter" data-target="4">0</div>
+        <div class="stat-label" data-i18n="stat3_label">Collaborations</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-num counter" data-target="3">0</div>
+        <div class="stat-label" data-i18n="stat4_label">Années d'expérience</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="about_tag">À Propos</div>
+      <h2 class="section-title" data-i18n="about_title">Qui suis-je ?</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-wrapper">
+          <div class="about-img-placeholder">
+            <!-- <i class="fa fa-user"></i> -->
+             <img src="images/me.jpeg" alt="">
+          </div>
+          <div class="about-badge">
+            <div class="about-badge-num">3+</div>
+            <div class="about-badge-label" data-i18n="about_badge">Années Exp.</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <p data-i18n="about_p1">Informaticien programmeur motivé et polyvalent, passionné par le développement, l'optimisation de systèmes et la résolution de problèmes techniques.</p>
+        <p data-i18n="about_p2">Compétent en développement web full-stack, maintenance logicielle et outils numériques. Je conçois, développe et maintiens l'intégralité d'une application web ou mobile avec soin et précision.</p>
+        <div class="about-info">
+          <div class="info-item">
+            <div class="info-item-label" data-i18n="info_name">Nom</div>
+            <div class="info-item-value">Rogélio Réthice IDOLEKE</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label" data-i18n="info_dob">Date de naissance</div>
+            <div class="info-item-value">30 déc. 2004</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label" data-i18n="info_addr">Adresse</div>
+            <div class="info-item-value">Abomey-Calavi, Bénin</div>
+          </div>
+          <div class="info-item">
+            <div class="info-item-label" data-i18n="info_email">Email</div>
+            <div class="info-item-value">idolekerogelio71@gmail.com</div>
+          </div>
+        </div>
+        <div class="interests">
+          <span class="interest-tag"><i class="fa fa-music"></i> <span data-i18n="int_music">Musique</span></span>
+          <span class="interest-tag"><i class="fa fa-plane"></i> <span data-i18n="int_travel">Voyage</span></span>
+          <span class="interest-tag"><i class="fa fa-camera"></i> <span data-i18n="int_photo">Photos</span></span>
+          <span class="interest-tag"><i class="fa fa-futbol"></i> <span data-i18n="int_sport">Sport</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="skills_tag">Compétences</div>
+      <h2 class="section-title" data-i18n="skills_title">Stack technique</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal" style="--pct:98%">
+        <div class="skill-header">
+          <span class="skill-name">HTML5</span>
+          <span class="skill-pct">98%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="98%"></div></div>
+      </div>
+      <div class="skill-card reveal" style="--pct:95%">
+        <div class="skill-header">
+          <span class="skill-name">CSS3 / Sass</span>
+          <span class="skill-pct">95%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95%"></div></div>
+      </div>
+      <div class="skill-card reveal" style="--pct:75%">
+        <div class="skill-header">
+          <span class="skill-name">JavaScript</span>
+          <span class="skill-pct">75%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="75%"></div></div>
+      </div>
+      <div class="skill-card reveal" style="--pct:70%">
+        <div class="skill-header">
+          <span class="skill-name">PHP</span>
+          <span class="skill-pct">70%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="70%"></div></div>
+      </div>
+      <div class="skill-card reveal" style="--pct:80%">
+        <div class="skill-header">
+          <span class="skill-name">Laravel</span>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="80%"></div></div>
+      </div>
+      <div class="skill-card reveal" style="--pct:95%">
+        <div class="skill-header">
+          <span class="skill-name">MySQL</span>
+          <span class="skill-pct">95%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="95%"></div></div>
+      </div>
+      <div class="skill-card reveal" style="--pct:60%">
+        <div class="skill-header">
+          <span class="skill-name">Flutter</span>
+          <span class="skill-pct">60%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="60%"></div></div>
+      </div>
+      <div class="skill-card reveal" style="--pct:70%">
+        <div class="skill-header">
+          <span class="skill-name">Git / GitHub</span>
+          <span class="skill-pct">70%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" data-width="70%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="svc_tag">Services</div>
+      <h2 class="section-title" data-i18n="svc_title">Ce que j'offre</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa fa-code"></i></div>
+        <div class="service-title" data-i18n="svc1_title">Développement Web</div>
+        <div class="service-desc"  data-i18n="svc1_desc">Création d'applications web modernes et responsives, du design à la mise en production, avec une attention particulière aux performances.</div>
+        <div class="service-techs">
+          <span class="tech-badge">Laravel</span>
+          <span class="tech-badge">PHP</span>
+          <span class="tech-badge">MySQL</span>
+          <span class="tech-badge">Bootstrap</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa fa-mobile-alt"></i></div>
+        <div class="service-title" data-i18n="svc2_title">Développement Mobile</div>
+        <div class="service-desc"  data-i18n="svc2_desc">Applications mobiles cross-platform avec Flutter pour iOS et Android, interfaces fluides et expériences utilisateur soignées.</div>
+        <div class="service-techs">
+          <span class="tech-badge">Flutter</span>
+          <span class="tech-badge">Dart</span>
+          <span class="tech-badge">Firebase</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa fa-pencil-ruler"></i></div>
+        <div class="service-title" data-i18n="svc3_title">UI/UX Design</div>
+        <div class="service-desc"  data-i18n="svc3_desc">Conception d'interfaces utilisateur intuitives et modernes. Expériences utilisateur optimisées, prototypage et design systems.</div>
+        <div class="service-techs">
+          <span class="tech-badge">Figma</span>
+          <span class="tech-badge">CSS3</span>
+          <span class="tech-badge">Animations</span>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa fa-share-alt"></i></div>
+        <div class="service-title" data-i18n="svc4_title">Community Manager</div>
+        <div class="service-desc"  data-i18n="svc4_desc">Gestion et animation de communautés digitales, stratégie de contenu, social media et growth hacking pour développer votre présence en ligne.</div>
+        <div class="service-techs">
+          <span class="tech-badge">Stratégie</span>
+          <span class="tech-badge">Contenu</span>
+          <span class="tech-badge">Analytics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HIRE ME ===== -->
+  <section id="hire">
+    <div class="hire-inner reveal">
+      <h2>
+        <span data-i18n="hire_title1">Vous avez un</span>
+        <span class="highlight-text"> <span data-i18n="hire_hl">projet en tête</span></span>
+        <span data-i18n="hire_title2"> ?</span>
+      </h2>
+      <p data-i18n="hire_desc">N'hésitez pas à me contacter pour en discuter. Je vous offrirai une solution sur mesure, adaptée à vos besoins et votre budget.</p>
+      <a href="#contact" class="btn-primary" data-i18n="hire_btn"><i class="fa fa-rocket"></i> Démarrons ensemble</a>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="proj_tag">Projets</div>
+      <h2 class="section-title" data-i18n="proj_title">Mes réalisations</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-img">
+          <img src="images/projet1.png" alt="Best De Demain"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="project-img-icon" style="display:none"><i class="fa fa-globe"></i></div>
+          <div class="project-overlay">
+            <a href="#" class="proj-link github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" class="proj-link"        target="_blank"><i class="fa fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-category" data-i18n="proj1_cat">Développement Web</div>
+          <div class="project-name"     data-i18n="proj1_name">App web pour Best De Demain</div>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">PHP</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-img">
+          <img src="images/projet2.png" alt="E-commerce"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="project-img-icon" style="display:none"><i class="fa fa-shopping-cart"></i></div>
+          <div class="project-overlay">
+            <a href="#" class="proj-link github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" class="proj-link"        target="_blank"><i class="fa fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-category" data-i18n="proj2_cat">Développement Web et mobile</div>
+          <div class="project-name"     data-i18n="proj2_name">Gestion de site de vente de tickets en ligne</div>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">PHP</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-img">
+          <img src="images/projet3.png" alt="Bibliothèque"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="project-img-icon" style="display:none"><i class="fa fa-book"></i></div>
+          <div class="project-overlay">
+            <a href="#" class="proj-link github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" class="proj-link"        target="_blank"><i class="fa fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-category" data-i18n="proj3_cat">Développement Web</div>
+          <div class="project-name"     data-i18n="proj3_name">Site de gestion de bibliothèque</div>
+          <div class="project-tags">
+            <span class="project-tag">Laravel</span>
+            <span class="project-tag">PHP</span>
+            <span class="project-tag">MySQL</span>
+            <span class="project-tag">Blade</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-img">
+          <div class="project-img-icon" style="display:flex"><i class="fa fa-paint-brush"></i></div>
+          <div class="project-overlay">
+            <a href="#" class="proj-link github" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" class="proj-link"        target="_blank"><i class="fa fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <div class="project-body">
+          <div class="project-category" data-i18n="proj4_cat">Web Design</div>
+          <div class="project-name"     data-i18n="proj4_name">Branding &amp; Illustration Design</div>
+          <div class="project-tags">
+            <span class="project-tag">Figma</span>
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="testi_tag">Témoignages</div>
+      <h2 class="section-title" data-i18n="testi_title">Ce que disent mes clients</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="testi-slider reveal">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-text" data-i18n="t1_text">Rethicedev a développé notre plateforme e-commerce de A à Z. Son expertise en Laravel et son sens du détail ont été déterminants.</div>
+          <div class="testi-author">
+            <div class="testi-avatar">RS</div>
+            <div>
+              <div class="testi-name" data-i18n="t1_name">Roger Scott</div>
+              <div class="testi-role" data-i18n="t1_role">Marketing Manager</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-text" data-i18n="t2_text">L'application mobile développée avec Flutter répond parfaitement à nos besoins. Excellent suivi et réactivité aux retours.</div>
+          <div class="testi-author">
+            <div class="testi-avatar">AM</div>
+            <div>
+              <div class="testi-name" data-i18n="t2_name">Ama Mensah</div>
+              <div class="testi-role" data-i18n="t2_role">CEO Startup Tech</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-text" data-i18n="t3_text">En tant que Community Manager, Rethice a complètement transformé notre présence digitale. Notre communauté a augmenté de 300%.</div>
+          <div class="testi-author">
+            <div class="testi-avatar">KD</div>
+            <div>
+              <div class="testi-name" data-i18n="t3_name">Koffi Dossou</div>
+              <div class="testi-role" data-i18n="t3_role">Directeur Communication</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-text" data-i18n="t4_text">La refonte de notre site institutionnel était un vrai challenge. Rethicedev a su moderniser notre interface. Résultat : +40% de temps sur le site.</div>
+          <div class="testi-author">
+            <div class="testi-avatar">PB</div>
+            <div>
+              <div class="testi-name" data-i18n="t4_name">Paul Bello</div>
+              <div class="testi-role" data-i18n="t4_role">DSI, Entreprise ONG</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-controls">
+        <button class="testi-btn" onclick="slideTesti(-1)"><i class="fa fa-chevron-left"></i></button>
+        <button class="testi-btn" onclick="slideTesti(1)"><i class="fa fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <div class="section-tag" data-i18n="contact_tag">Contact</div>
+      <h2 class="section-title" data-i18n="contact_title">Travaillons ensemble</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3 data-i18n="contact_h3">Démarrons une conversation</h3>
+        <p  data-i18n="contact_desc">Vous avez un projet, une question ou simplement envie d'échanger ? Tous les canaux sont ouverts. Je réponds généralement sous 24h.</p>
+        <div class="contact-items">
+          <a href="mailto:idolekerogelio71@gmail.com" class="contact-item">
+            <div class="contact-item-icon"><i class="fa fa-envelope"></i></div>
+            <div>
+              <div class="contact-item-label" data-i18n="ci_email_lbl">Email</div>
+              <div class="contact-item-text">idolekerogelio71@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:+22901902719" class="contact-item">
+            <div class="contact-item-icon"><i class="fa fa-phone"></i></div>
+            <div>
+              <div class="contact-item-label" data-i18n="ci_phone_lbl">Téléphone</div>
+              <div class="contact-item-text">+229 01 902 719 93</div>
+            </div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fa fa-map-marker-alt"></i></div>
+            <div>
+              <div class="contact-item-label" data-i18n="ci_loc_lbl">Localisation</div>
+              <div class="contact-item-text">Abomey-Calavi, Bénin</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="form_name_lbl">Nom</label>
+            <input type="text"  id="cName"    placeholder="Votre nom complet" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="form_email_lbl">Email</label>
+            <input type="email" id="cEmail"   placeholder="votre@email.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form_subj_lbl">Sujet</label>
+          <input type="text" id="cSubject" placeholder="Objet de votre message" />
+        </div>
+        <div class="form-group">
+          <label data-i18n="form_msg_lbl">Message</label>
+          <textarea id="cMsg" placeholder="Décrivez votre projet..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="sendMsg()" style="width:100%;justify-content:center;font-size:0.85rem" data-i18n="form_send">
+          <i class="fa fa-paper-plane"></i> Envoyer le message
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" style="font-size:1.2rem">rethicedev<span>.</span></a>
+        <p data-i18n="footer_about_desc">Développeur Full-Stack &amp; Community Manager basé à Abomey-Calavi, Bénin. Disponible pour des projets freelance.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title" data-i18n="footer_nav">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="#about"    data-i18n="footer_about">À Propos</a></li>
+          <li><a href="#skills"   data-i18n="footer_skills">Compétences</a></li>
+          <li><a href="#services" data-i18n="footer_services">Services</a></li>
+          <li><a href="#projects" data-i18n="footer_projects">Projets</a></li>
+          <li><a href="#contact"  data-i18n="footer_contact_l">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title" data-i18n="footer_svc">Services</div>
+        <ul class="footer-links">
+          <li><a href="#services" data-i18n="footer_svc1">Développement Web</a></li>
+          <li><a href="#services" data-i18n="footer_svc2">Développement Mobile</a></li>
+          <li><a href="#services" data-i18n="footer_svc3">UI/UX Design</a></li>
+          <li><a href="#services" data-i18n="footer_svc4">Community Manager</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-title" data-i18n="footer_contact">Contact</div>
+        <div class="contact-items" style="gap:0.75rem">
+          <div class="contact-item" style="padding:0.75rem;border-radius:6px">
+            <div class="contact-item-icon" style="width:30px;height:30px;font-size:0.75rem"><i class="fa fa-envelope"></i></div>
+            <div class="contact-item-text" style="font-size:0.8rem">idolekerogelio71@gmail.com</div>
+          </div>
+          <div class="contact-item" style="padding:0.75rem;border-radius:6px">
+            <div class="contact-item-icon" style="width:30px;height:30px;font-size:0.75rem"><i class="fa fa-phone"></i></div>
+            <div class="contact-item-text" style="font-size:0.8rem">+229 01 902 719 93</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© <span id="year"></span> Rogélio Réthice IDOLEKE — rethicedev</span>
+      <span data-i18n="footer_loc">Abomey-Calavi, Bénin 🇧🇯</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
